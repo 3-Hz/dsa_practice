@@ -5,13 +5,13 @@ const swap = (arr, i, j) => {
 }
 
 const bubbleSort = (arr) => {
-  let i = 0;
-  while (i < arr.length - 1) {
+  let unsorted = true;
+  while (unsorted) {
+    unsorted = false;
+    for (let i = 0; i < arr.length - 1; i++)
     if (arr[i] > arr[i + 1]) {
       swap(arr, i, i + 1);
-      i = 0;
-    } else {
-      i++;
+      unsorted = true;
     }
   }
   return arr;
